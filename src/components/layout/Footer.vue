@@ -1,6 +1,6 @@
 <template>
   <v-row class="footer">
-    <v-col class="text-center mb-2"> &copy; Copyright 2022. </v-col>
+    <v-col class="text-center mb-2"> &copy; KBE-Knightly by Vinc </v-col>
   </v-row>
 </template>
 

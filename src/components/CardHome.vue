@@ -190,7 +190,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ecddfd;
+  background-color: ##0017ff;
   height: 500px;
   margin-left: 12px;
   border-bottom-right-radius: 75px;

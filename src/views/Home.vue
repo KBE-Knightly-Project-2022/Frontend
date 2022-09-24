@@ -1,15 +1,27 @@
 <template>
-  <div class="home">
-    <v-container>
-      <card-home></card-home>
-    </v-container>
-  </div>
+  <!-- </v-col> -->
+  <v-col>
+    <v-row class="mb-4">
+      <a href="" class="mx-auto my-8">
+        <img src="@/assets/knight.png" alt="" class="full-image" />
+      </a>
+    </v-row>
+  </v-col>
 </template>
 <script>
-import CardHome from "../components/CardHome.vue";
+import Footer from "../components/layout/Footer.vue";
 export default {
   components: {
-    CardHome,
+    Footer,
   },
 };
 </script>
+
+<style>
+.big_image {
+  width: auto;
+  height: 500px;
+  margin: auto;
+  border-radius: 50%;
+}
+</style>

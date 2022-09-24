@@ -88,7 +88,7 @@ export default {
       friends: [],
       isUpdating: false,
       // all the users from database will be shown in the participant drop down
-      people: ["Sandra Adams", "Max Verstappen", "Luis Hamilton"],
+      people: ["Vincent Mendes"],
       nameRules: [(v) => !!v || "Name is required"],
       textareaRules: [(v) => !!v || "Description cannot be empty"],
       emailRules: [
@@ -153,7 +153,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ecddfd;
+  background-color: #0017ff;
   height: 500px;
   margin-left: 12px;
   border-bottom-right-radius: 75px;
