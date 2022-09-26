@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "../store";
 
 // backend url here
-export const API_URL = `http://127.0.0.1:8000/api/`;
+export const API_URL = `http://127.0.0.1:8083/`;
 
 const $api = axios.create({
   // withCredentials: true,

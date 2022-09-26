@@ -27,8 +27,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      products: "getFilterProducts",
-      component: "getFilterComponent",
+      products: "getProductList",
+      component: "getComponentList",
     }),
   },
   watch: {

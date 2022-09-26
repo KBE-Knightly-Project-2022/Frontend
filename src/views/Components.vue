@@ -15,6 +15,7 @@ export default {
   components: {
     CardComponent,
   },
+  component_list : [],
   data() {
     return {};
   },
@@ -25,11 +26,11 @@ export default {
   },
   watch: {
     "$route.params.type": function () {
-      this.fetchComponents( this.$route.params.type);
+      this.fetchComponents( );
     },
   },
   mounted() {
-    this.fetchComponents( this.$route.params.type);
+    this.fetchComponents( );
   },
   methods: {
     ...mapActions(["fetchComponents"]),

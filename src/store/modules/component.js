@@ -73,29 +73,28 @@ const getters = {
   getComponentList: (state) => {
     return state.components;
   },
-  getFilterComponent: (state) => (query) => {
-    return state.dummy_components.filter((component) => {
-      return (
-        component.name.includes(query) ||
-        component.description.includes(query)
-      );
-    });
-  },
+  // getFilterComponent: (state) => (query) => {
+  //   return state.dummy_components.filter((component) => {
+  //     return (
+  //       component.name.includes(query) ||
+  //       component.description.includes(query)
+  //     );
+  //   });
+  // },
 };
 
 const actions = {
-  async fetchComponents({ commit }, type) {
-    // let response = await api.get("component/type=?" + type);
-    // commit("setComponents", response.data.data);
-
-    if (type) {
-      var data = state.dummy_components.filter((component) => {
-        return component.type === type;
-      });
-    } else {
-      var data = state.dummy_components;
-    }
-    commit("setComponents", data);
+  async fetchComponents({ commit }) {
+    let response = await api.get("components");
+    commit("setComponents", response.data);
+    // if (type) {
+    //   var data = state.dummy_components.filter((component) => {
+    //     return component.type === type;
+    //   });
+    // } else {
+    //   var data = state.dummy_components;
+    // }
+    // commit("setComponents", data);
   },
 };
 
