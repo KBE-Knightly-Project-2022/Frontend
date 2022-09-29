@@ -40,11 +40,11 @@
               </v-btn>
               <v-select
                 :items="[
-                  { value: '1', text: 'bronze' },
-                  { value: '2', text: 'silver' },
-                  { value: '3', text: 'gold' },
-                  { value: '4', text: 'donkey' },
-                  { value: '5', text: 'cow' },
+                  { value: 'bronze', text: 'bronze' },
+                  { value: 'silver', text: 'silver' },
+                  { value: 'gold', text: 'gold' },
+                  { value: 'donkey', text: 'donkey' },
+                  { value: 'cow', text: 'cow' },
                 ]"
                 :value="currency"
                 class="select"
@@ -80,6 +80,7 @@ export default {
   },
   data: () => ({
     search: "",
+
   }),
   computed: {
     ...mapGetters(["isAuthenticated", "currency", "cartItemCount"]),
