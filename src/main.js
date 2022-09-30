@@ -11,7 +11,7 @@ import Keycloak from "keycloak-js";
 router.beforeEach(middleware({ router, store }));
 
 // axios.defaults.withCredentials = true
-axios.defaults.baseURL = "http://127.0.0.1:8000/api/";
+axios.defaults.baseURL = "http://192.168.2.104:8000/api/";
 
 Vue.use(CroudGantt);
 
@@ -28,7 +28,7 @@ Vue.config.productionTip = false;
 // }).$mount("#app");
 
 let initOptions = {
-  url: 'http://localhost:8080/', realm: 'realm1', clientId: 'Frontend', onLoad: 'login-required'
+  url: 'http://192.168.2.104:8080', realm: 'realm1', clientId: 'Frontend', onLoad: 'login-required'
 }
 
 let keycloak = Keycloak(initOptions);
