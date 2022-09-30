@@ -2,15 +2,14 @@ import axios from "axios";
 import store from "../store";
 
 // backend url here
-export const API_URL = `http://127.0.0.1:8083/`;
+export const API_URL = `http://localhost:8083/`;
 
 const $api = axios.create({
-  withCredentials: true,
   baseURL: API_URL,
 });
 
 $api.interceptors.request.use((config) => {
-  config.headers.Authorization = `Bearer ${store.state.auth.token}`;
+  // config.headers.Authorization = "Bearer " + localStorage.getItem("keycloakToken"); this breaks everything, do not touch
   return config;
 });
 
