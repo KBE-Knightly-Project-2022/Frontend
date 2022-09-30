@@ -1,6 +1,6 @@
 const state = {
   settings: {
-    currency: "$",
+    currency: "bronze",
   },
 };
 
@@ -18,7 +18,9 @@ const actions = {
 
 const mutations = {
   setCurrency(state, currency) {
-    state.settings.currency = currency;
+    console.log("ooooh im changeing currency to" + currency)
+    state.currency = currency;
+    console.log(state.currency)
   },
 };
 

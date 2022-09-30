@@ -2,7 +2,6 @@
   <v-card class="mx-auto" max-width="344" outlined>
     <v-list-item three-line>
       <v-list-item-content>
-<!--        <div class="text-overline mb-4">{{ component.type }}</div>-->
         <v-list-item-title class="text-h5 mb-1">
           {{ component.name }}
         </v-list-item-title>
@@ -10,7 +9,9 @@
         <h3>Price: {{ component.price }} {{ currency }}</h3>
       </v-list-item-content>
 
-      <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
+      <v-list-item-avatar tile size="80" color="grey" >
+
+      </v-list-item-avatar>
     </v-list-item>
 
     <v-card-actions>

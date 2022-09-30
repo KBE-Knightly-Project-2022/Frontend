@@ -144,8 +144,6 @@ export default {
       ],
       form: {
         name: "",
-        // price: "",
-        // description: "",
         product_components: [],
       },
     };

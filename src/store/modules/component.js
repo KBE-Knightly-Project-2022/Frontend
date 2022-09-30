@@ -1,72 +1,8 @@
 import api from "../../plugins/api";
 import router from "@/router";
+import setting from "./setting";
 const state = {
   components: [],
-  dummy_components: [
-    {
-      id: 1,
-      name: "armour 1",
-      type: "armour",
-      price: 44,
-      description: "This is description.",
-    },
-    {
-      id: 2,
-      name: "armour 2",
-      type: "armour",
-      price: 340,
-      description: "This is description.",
-    },
-    {
-      id: 3,
-      name: "shield 1",
-      type: "shield",
-      price: 20,
-      description: "This is description.",
-    },
-    {
-      id: 4,
-      name: "shield 2",
-      type: "shield",
-      price: 10,
-      description: "This is description.",
-    },
-    {
-      id: 5,
-      name: "shield 3",
-      type: "shield",
-      price: 40,
-      description: "This is description.",
-    },
-    {
-      id: 6,
-      name: "weapon 1",
-      type: "weapon",
-      price: 50,
-      description: "This is description.",
-    },
-    {
-      id: 7,
-      name: "weapon 2",
-      type: "weapon",
-      price: 60,
-      description: "This is description.",
-    },
-    {
-      id: 8,
-      name: "weapon 3",
-      type: "weapon",
-      price: 70,
-      description: "This is description.",
-    },
-    {
-      id: 9,
-      name: "weapon 4",
-      type: "weapon",
-      price: 20,
-      description: "This is description.",
-    },
-  ],
 };
 
 const getters = {
@@ -85,7 +21,14 @@ const getters = {
 
 const actions = {
   async fetchComponents({ commit }) {
-    let response = await api.get("components");
+    let token = localStorage.getItem("keycloakToken")
+    console.log(token)
+    let currency = setting.getters.currency(setting.state) //TODO warum is das immer bronze auch wenn man state ändert
+    let response = await api.get("components?currency=" + currency ,
+        {
+          headers: {
+            "Authorization": "Bearer " + localStorage.getItem("keycloakToken"),
+          }});
     commit("setComponents", response.data);
     // if (type) {
     //   var data = state.dummy_components.filter((component) => {

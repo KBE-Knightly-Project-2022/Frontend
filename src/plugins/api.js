@@ -5,7 +5,7 @@ import store from "../store";
 export const API_URL = `http://127.0.0.1:8083/`;
 
 const $api = axios.create({
-  // withCredentials: true,
+  withCredentials: true,
   baseURL: API_URL,
 });
 

@@ -1,5 +1,6 @@
 import axios from "axios";
 import api from "../../plugins/api";
+import setting from "./setting";
 
 const state = {
   // dummy_products: [
@@ -42,15 +43,26 @@ const getters = {
 
 const actions = {
   async productCreate({ commit }, product) {
-    await api.post("createProduct", product);
+    await api.post("createProduct", product ,
+        {
+          headers: {
+            "Authorization": "Bearer " + localStorage.getItem("keycloakToken"),
+          }});
     return await dispatch("products");
-    console.log(product, "product");
-    let products = [...state.products, product];
-    commit("setProduct", products);
+    // console.log(product, "product");
+    // let products = [...state.products, product];
+    // commit("setProduct", products);
   },
 
   async fetchProducts({ commit }) {
-    let response = await api.get("products");
+    let currency = setting.getters.currency(setting.state)
+    let token = localStorage.getItem("keycloakToken")
+    console.log("currency= " + currency)
+    let response = await api.get("products?currency=" + currency , {
+      headers: {
+        "Authorization": "Bearer " + token,
+      }
+    });
     commit("setProduct", response.data);
 
     // commit("setProduct", state.dummy_products);
