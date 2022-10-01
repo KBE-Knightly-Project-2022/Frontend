@@ -120,7 +120,67 @@
               Products
             </router-link>
           </v-list-item-title>
+        </v-list-item>
+        <v-list-item>
+          <v-dialog
+              v-model="dialog"
+              width="500"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                  class="text-body-1 text-decoration-none black--text font-weight-medium"
+                  style="background-color: white"
+                  elevation="0"
+                  v-bind="attrs"
+                  v-on="on"
+              >
+                Ask the Oracle
+              </v-btn>
+            </template>
 
+            <v-card
+                class="text-body-1 text-decoration-none black--text font-weight-medium"
+            >
+              <v-card-title
+                  style="margin-top: 10px">
+                Tell me your name child
+              </v-card-title>
+
+              <v-text-field
+                  label="Name"
+                  variant="outlined"
+                  style="margin: 30px"
+                  :rules="[required]"
+                  v-model="oracleName"
+                  clearable>
+
+              </v-text-field>
+
+              <v-card-text>
+                youre age is : {{ oracleAge.age}}
+              </v-card-text>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                    style="background-color: white"
+                    text
+                    @click="dialog = false"
+                >
+                  i have no time for this
+                </v-btn>
+
+                <v-btn
+                    text
+                    style="background-color:white"
+                    :disabled="oracleName === ''"
+                    @click="getAge()"
+                >
+                  tell me wench
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -129,6 +189,7 @@
 <script>
 import Login from "../Login.vue";
 import { mapActions } from "vuex";
+import api from "../../plugins/api";
 
 export default {
   components: {
@@ -137,6 +198,9 @@ export default {
   data() {
     return {
       drawer: true,
+      dialog: false,
+      oracleName: "",
+      oracleAge: "",
       items: [
         // { title: "Home", icon: "mdi-home-outline", url: "Home" },
         {
@@ -156,6 +220,17 @@ export default {
       this.LogOut();
       this.$router.push({ name: "Home" });
     },
+    async getAge() {
+      let response = await api.get("age?name=" + this.oracleName,
+          {
+            headers: {
+              "Authorization": "Bearer " + localStorage.getItem("keycloakToken"),
+            }
+          }).then((response) => {
+            this.oracleAge = response.data
+      });
+      this.oracleName = ""
+    }
   },
 };
 </script>
