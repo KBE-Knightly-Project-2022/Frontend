@@ -22,8 +22,7 @@ const getters = {
 const actions = {
   async fetchComponents({ commit }) {
     let token = localStorage.getItem("keycloakToken")
-    console.log(token)
-    let currency = setting.getters.currency(setting.state) //TODO warum is das immer bronze auch wenn man state ändert
+    let currency = setting.getters.currency(setting.state)
     let response = await api.get("components?currency=" + currency ,
         {
           headers: {

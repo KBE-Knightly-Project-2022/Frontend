@@ -48,7 +48,7 @@ const actions = {
           headers: {
             "Authorization": "Bearer " + localStorage.getItem("keycloakToken"),
           }});
-    return await dispatch("products");
+    // return await dispatch("products");
     // console.log(product, "product");
     // let products = [...state.products, product];
     // commit("setProduct", products);
@@ -57,7 +57,6 @@ const actions = {
   async fetchProducts({ commit }) {
     let currency = setting.getters.currency(setting.state)
     let token = localStorage.getItem("keycloakToken")
-    console.log("currency= " + currency)
     let response = await api.get("products?currency=" + currency , {
       headers: {
         "Authorization": "Bearer " + token,

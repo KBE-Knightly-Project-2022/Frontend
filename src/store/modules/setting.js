@@ -1,12 +1,12 @@
 const state = {
-  settings: {
+  setting: {
     currency: "bronze",
   },
 };
 
 const getters = {
   currency: (state) => {
-    return state.settings.currency;
+    return state.setting.currency;
   },
 };
 
@@ -17,10 +17,11 @@ const actions = {
 };
 
 const mutations = {
-  setCurrency(state, currency) {
+  setCurrency(state1, currency) {
     console.log("ooooh im changeing currency to" + currency)
-    state.currency = currency;
-    console.log(state.currency)
+    state.setting.currency = currency;
+    state1.setting.currency = currency;
+    console.log(state.setting.currency)
   },
 };
 
