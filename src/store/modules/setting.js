@@ -21,7 +21,6 @@ const mutations = {
     console.log("ooooh im changeing currency to" + currency)
     state.setting.currency = currency;
     state1.setting.currency = currency;
-    console.log(state.setting.currency)
   },
 };
 
