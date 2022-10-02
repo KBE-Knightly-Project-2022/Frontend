@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="344" outlined>
+  <v-card class="mx-auto" max-width="500" outlined>
     <v-list-item three-line>
       <v-list-item-content>
         <v-list-item-title class="text-h5 mb-1">
@@ -9,7 +9,7 @@
         <h3>Price: {{ component.price }} {{ currency }}</h3>
       </v-list-item-content>
 
-      <v-list-item-avatar tile size="80">
+      <v-list-item-avatar tile size="200">
         <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg"></v-img>
       </v-list-item-avatar>
     </v-list-item>
