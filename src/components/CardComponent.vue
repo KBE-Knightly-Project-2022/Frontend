@@ -10,7 +10,7 @@
       </v-list-item-content>
 
       <v-list-item-avatar tile size="200">
-        <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg"></v-img>
+        <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg" contain></v-img>
       </v-list-item-avatar>
     </v-list-item>
 
@@ -50,9 +50,6 @@
             ID: {{ component.id }}
           </v-card-text>
           <v-card-text>
-            price: {{ component.price }}
-          </v-card-text>
-          <v-card-text>
             description: {{ component.description }}
           </v-card-text>
           <v-card-text>
@@ -65,13 +62,13 @@
             position: {{ component.position }}
           </v-card-text>
           <v-card-text>
-            weight: {{ component.weight }}
+            weight: {{ component.weight }} grams
           </v-card-text>
           <v-card-text>
-            maxrange: {{ component.minrange }}
+            minrange: {{ component.minrange }} mm
           </v-card-text>
           <v-card-text>
-            maxrange: {{ component.maxrange }}
+            maxrange: {{ component.maxrange }} mm
           </v-card-text>
 
           <v-divider></v-divider>
@@ -123,8 +120,5 @@ export default {
       return false;
     },
   },
-  getImgPath() {
-    return "@/assets/" + this.component.name + ".png"
-  }
 };
 </script>

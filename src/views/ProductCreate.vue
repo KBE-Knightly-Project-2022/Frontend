@@ -67,7 +67,7 @@
                   size="80"
 
               >
-                <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg"></v-img>
+                <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg" contain></v-img>
               </v-list-item-avatar>
             </v-list-item>
           </v-card>
@@ -102,20 +102,21 @@
                     product_component.description
                   }}
                 </v-list-item-subtitle>
-                <h3>Price: {{ product_component.price }}</h3>
+                <h3>Price: {{ product_component.price }} {{currency}}</h3>
               </v-list-item-content>
 
               <v-list-item-avatar
                   tile
                   size="80"
-                  color="grey"
-              ></v-list-item-avatar>
+              >
+                <v-img :src="require(`@/assets/${product_component.name}.png`)"  alt="@/assets/Er-Mann.jpg" contain></v-img>
+              </v-list-item-avatar>
             </v-list-item>
           </v-card>
         </draggable>
       </v-col>
       <v-col cols="12" class="btn-column">
-        <v-btn color="primary" @click="saveProduct">Save</v-btn>
+        <v-btn color="primary" @click="saveProduct" :disabled="form.name === ''">Save</v-btn>
       </v-col>
     </v-row>
   </div>
@@ -153,6 +154,7 @@ export default {
   computed: {
     ...mapGetters({
       component_list: "getComponentList",
+      currency : "currency"
     }),
   },
   mounted() {
