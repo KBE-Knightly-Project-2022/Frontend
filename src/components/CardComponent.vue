@@ -10,17 +10,17 @@
       </v-list-item-content>
 
       <v-list-item-avatar tile size="80">
-          <img src="src/assets/Flail.png" alt="oops">
+        <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg"></v-img>
       </v-list-item-avatar>
     </v-list-item>
 
     <v-card-actions>
       <v-btn
-        rounded
-        depressed
-        color="primary"
-        :disabled="checkItemExistInCart(component.id)"
-        @click="addItemToCart(component)"
+          rounded
+          depressed
+          color="primary"
+          :disabled="checkItemExistInCart(component.id)"
+          @click="addItemToCart(component)"
       >
         {{ checkItemExistInCart(component.id) ? "Added to cart" : "Add to cart" }}
       </v-btn>
@@ -47,31 +47,31 @@
           </v-card-title>
 
           <v-card-text>
-            ID: {{component.id}}
+            ID: {{ component.id }}
           </v-card-text>
           <v-card-text>
-            price: {{component.price}}
+            price: {{ component.price }}
           </v-card-text>
           <v-card-text>
-            description: {{component.description}}
+            description: {{ component.description }}
           </v-card-text>
           <v-card-text>
-            attack: {{component.attack}}
+            attack: {{ component.attack }}
           </v-card-text>
           <v-card-text>
-            defence: {{component.defence}}
+            defence: {{ component.defence }}
           </v-card-text>
           <v-card-text>
-            position: {{component.position}}
+            position: {{ component.position }}
           </v-card-text>
           <v-card-text>
-            weight: {{component.weight}}
+            weight: {{ component.weight }}
           </v-card-text>
           <v-card-text>
-            maxrange: {{component.minrange}}
+            maxrange: {{ component.minrange }}
           </v-card-text>
           <v-card-text>
-            maxrange: {{component.maxrange}}
+            maxrange: {{ component.maxrange }}
           </v-card-text>
 
           <v-divider></v-divider>
@@ -95,11 +95,12 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import {mapActions, mapGetters} from "vuex";
+
 export default {
   name: "CardComponent",
   props: ["component"],
-  data () {
+  data() {
     return {
       dialog: false,
     }
@@ -122,5 +123,8 @@ export default {
       return false;
     },
   },
+  getImgPath() {
+    return "@/assets/" + this.component.name + ".png"
+  }
 };
 </script>

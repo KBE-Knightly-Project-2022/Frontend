@@ -9,8 +9,8 @@
         <h3>Price: {{ component.price }} {{ currency }}</h3>
       </v-list-item-content>
 
-      <v-list-item-avatar tile size="80" color="grey" >
-
+      <v-list-item-avatar tile size="80">
+        <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg"></v-img>
       </v-list-item-avatar>
     </v-list-item>
 
