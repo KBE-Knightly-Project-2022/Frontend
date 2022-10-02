@@ -9,21 +9,12 @@
         <h3>Price: {{ component.price }} {{ currency }}</h3>
       </v-list-item-content>
 
-      <v-list-item-avatar tile size="80">
-          <img src="src/assets/Flail.png" alt="oops">
+      <v-list-item-avatar tile size="80" color="grey" >
+
       </v-list-item-avatar>
     </v-list-item>
 
     <v-card-actions>
-      <v-btn
-        rounded
-        depressed
-        color="primary"
-        :disabled="checkItemExistInCart(component.id)"
-        @click="addItemToCart(component)"
-      >
-        {{ checkItemExistInCart(component.id) ? "Added to cart" : "Add to cart" }}
-      </v-btn>
       <v-spacer></v-spacer>
       <v-dialog
           v-model="dialog"
