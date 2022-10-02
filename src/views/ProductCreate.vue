@@ -65,8 +65,10 @@
               <v-list-item-avatar
                   tile
                   size="80"
-                  color="grey"
-              ></v-list-item-avatar>
+
+              >
+                <v-img :src="require(`@/assets/${component.name}.png`)"  alt="@/assets/Er-Mann.jpg"></v-img>
+              </v-list-item-avatar>
             </v-list-item>
           </v-card>
         </draggable>

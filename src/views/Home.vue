@@ -3,7 +3,7 @@
   <v-col>
     <v-row class="mb-4">
       <a href="" class="mx-auto my-8">
-        <img src="@/assets/knight.png" alt="" class="full-image" />
+        <img src="@/assets/knightIcon.png" alt="" class="full-image" />
       </a>
     </v-row>
   </v-col>

@@ -1,14 +1,16 @@
 <template>
-  <v-card class="mx-auto" max-width="344" outlined>
+  <v-card class="mx-auto" max-width="500" outlined>
     <v-list-item three-line>
       <v-list-item-content>
-        <div class="text-overline mb-4">{{ product.type }}</div>
         <v-list-item-title class="text-h5 mb-1">
           {{ product.name }}
         </v-list-item-title>
         <v-list-item-subtitle>{{ product.description }}</v-list-item-subtitle>
         <h3>Price: {{ product.price }} {{ currency }}</h3>
       </v-list-item-content>
+      <v-list-item-avatar tile size="200">
+        <v-img src="@/assets/Er-Mann.jpg"></v-img>
+      </v-list-item-avatar>
     </v-list-item>
 
     <v-card-actions>
