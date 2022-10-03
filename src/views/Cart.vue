@@ -51,6 +51,9 @@
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Cart",
+  metaInfo: {
+    title: 'Cart'
+  },
   data() {
     return {};
   },

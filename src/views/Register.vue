@@ -11,5 +11,8 @@ export default {
   components: {
     CardRegister,
   },
+  metaInfo: {
+    title: 'Register'
+  },
 };
 </script>

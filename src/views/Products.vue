@@ -14,6 +14,9 @@ export default {
   components: {
     CardProduct,
   },
+  metaInfo: {
+    title: 'Products'
+  },
   data() {
     return {};
   },

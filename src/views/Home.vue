@@ -14,6 +14,9 @@ export default {
   components: {
     Footer,
   },
+  metaInfo: {
+    title: 'Knightly Home'
+  },
 };
 </script>
 

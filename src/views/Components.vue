@@ -15,6 +15,9 @@ export default {
   components: {
     CardComponent,
   },
+  metaInfo: {
+    title: 'Armoury'
+  },
   component_list : [],
   data() {
     return {};

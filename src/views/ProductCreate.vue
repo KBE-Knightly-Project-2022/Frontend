@@ -131,6 +131,9 @@ export default {
   components: {
     draggable,
   },
+  metaInfo: {
+    title: 'Knight Creation'
+  },
   data() {
     return {
       titles: [

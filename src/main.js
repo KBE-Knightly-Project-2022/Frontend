@@ -8,12 +8,14 @@ import store from "./store";
 import axios from "axios";
 import middleware from "@grafikri/vue-middleware";
 import Keycloak from "keycloak-js";
+import VueMeta from 'vue-meta';
 router.beforeEach(middleware({ router, store }));
 
 // axios.defaults.withCredentials = true
 axios.defaults.baseURL = "http://192.168.2.104:8000/api/";
 
 Vue.use(CroudGantt);
+Vue.use(VueMeta);
 
 Vue.use(require('vue-moment'));
 Vue.config.productionTip = false;
